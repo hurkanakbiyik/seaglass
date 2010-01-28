@@ -205,22 +205,20 @@ public final class ComboBoxPainter extends AbstractRegionPainter {
         Shape s = g.getClip();
         if (full) {
             g.setClip(0, 0, width, height);
-        } else {
-            g.setClip(width - buttonWidth, 0, buttonWidth, height);
-        }
-        g.setColor(outerShadowColor);
-        setPath(1, 2, width - 2, height - 2, 5);
-        g.fill(path);
-        g.setColor(innerShadowColor);
-        setPath(2, 2, width - 4, height - 3, 5);
-        g.fill(path);
-        g.setClip(s);
-    }
-
-    private Path2D decodeBorder(double width, double height) {
-        double arcSize = 4.0;
-        double x = 2.0;
-        double y = 2.0;
+        } else // FIXME Make this work again.
+//        Shape s = g.getClip();
+//        if (full) {
+//            g.setClip(0, 0, width, height);
+//        } else {
+//            g.setClip(width - buttonWidth, 0, buttonWidth, height);
+//        }
+//        g.setColor(outerShadowColor);
+//        s = setPath(CornerSize.OUTER_FOCUS, 1, 2, width - 2, height - 2);
+//        g.fill(s);
+//        g.setColor(innerShadowColor);
+//        s = setPath(CornerSize.INNER_FOCUS, 2, 2, width - 4, height - 3);
+//        g.fill(s);
+//        double y = 2.0;
         width -= 2.0;
         height -= 4.0;
         decodeButtonPath(x, y, width, height, arcSize, arcSize);
@@ -334,19 +332,4 @@ public final class ComboBoxPainter extends AbstractRegionPainter {
         public Color lowerShineBottom;
         public float lowerShineMidpoint;
         public Color mainColor;
-        public Color backgroundTop;
-        public Color backgroundBottom;
-
-        public ButtonStateColors(Color upperShineTop, Color upperShineBottom, Color lowerShineTop, Color lowerShineBottom,
-            float lowerShineMidpoint, Color mainColor, Color backgroundTop, Color backgroundBottom) {
-            this.upperShineTop = upperShineTop;
-            this.upperShineBottom = upperShineBottom;
-            this.lowerShineTop = lowerShineTop;
-            this.lowerShineBottom = lowerShineBottom;
-            this.lowerShineMidpoint = lowerShineMidpoint;
-            this.mainColor = mainColor;
-            this.backgroundTop = backgroundTop;
-            this.backgroundBottom = backgroundBottom;
-        }
-    }
-}
+        pub
