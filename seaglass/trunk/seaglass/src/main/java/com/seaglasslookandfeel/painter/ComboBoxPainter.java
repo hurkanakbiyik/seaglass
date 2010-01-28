@@ -206,19 +206,19 @@ public final class ComboBoxPainter extends AbstractRegionPainter {
         if (full) {
             g.setClip(0, 0, width, height);
         } else // FIXME Make this work again.
-//        Shape s = g.getClip();
-//        if (full) {
-//            g.setClip(0, 0, width, height);
-//        } else {
-//            g.setClip(width - buttonWidth, 0, buttonWidth, height);
-//        }
-//        g.setColor(outerShadowColor);
-//        s = setPath(CornerSize.OUTER_FOCUS, 1, 2, width - 2, height - 2);
-//        g.fill(s);
-//        g.setColor(innerShadowColor);
-//        s = setPath(CornerSize.INNER_FOCUS, 2, 2, width - 4, height - 3);
-//        g.fill(s);
-//        double y = 2.0;
+        // Shape s = g.getClip();
+        // if (full) {
+        // g.setClip(0, 0, width, height);
+        // } else {
+        // g.setClip(width - buttonWidth, 0, buttonWidth, height);
+        // }
+        // g.setColor(outerShadowColor);
+        // s = setPath(CornerSize.OUTER_FOCUS, 1, 2, width - 2, height - 2);
+        // g.fill(s);
+        // g.setColor(innerShadowColor);
+        // s = setPath(CornerSize.INNER_FOCUS, 2, 2, width - 4, height - 3);
+        // g.fill(s);
+        // double y = 2.0;
         width -= 2.0;
         height -= 4.0;
         decodeButtonPath(x, y, width, height, arcSize, arcSize);
@@ -235,14 +235,14 @@ public final class ComboBoxPainter extends AbstractRegionPainter {
         return path;
     }
 
-    private void decodeButtonPath(Double left, Double top, Double width, Double height, Double arcW, Double arcH) {
+    privatleft, top, width, height, size left, Double top, Double width, Double height, Double arcW, Double arcH) {
         Double bottom = top + height;
         Double right = left + width;
         path.reset();
         path.moveTo(left + arcW, top);
         path.quadTo(left, top, left, top + arcH);
         path.lineTo(left, bottom - arcH);
-        path.quadTo(left, bottom, left + arcW, bottom);
+   x, y, width, height, sizettom, left + arcW, bottom);
         path.lineTo(right, bottom);
         path.lineTo(right, top);
         path.closePath();
