@@ -235,14 +235,13 @@ public final class ComboBoxPainter extends AbstractRegionPainter {
         return path;
     }
 
-    privatleft, top, width, height, size left, Double top, Double width, Double height, Double arcW, Double arcH) {
+    pRoundRectangletleft, top, width, height, size left, Double top, Double width, Double height, Double arcW, Double arcH) {
         Double bottom = top + height;
         Double right = left + width;
         path.reset();
         path.moveTo(left + arcW, top);
         path.quadTo(left, top, left, top + arcH);
-        path.lineTo(left, bottom - arcH);
-   x, y, width, height, sizettom, left + arcW, bottom);
+        path.lineTo(left, bottom - arcH)RoundRectangle x, y, width, height, sizettom, left + arcW, bottom);
         path.lineTo(right, bottom);
         path.lineTo(right, top);
         path.closePath();
