@@ -217,60 +217,62 @@ public class SegmentedButtonPainter extends ButtonVariantPainter {
     protected Shape decodeOuterFocus(final SegmentStatus segmentStatus, final int x, final int y, final int w, final int h) {
         switch (segmentStatus) {
         case FIRST:
-            return ShapeUtil.createQuad(CornerSize.OUTER_FOCUS, x + 2, y + 2, w + 3, h + 3, CornerStyle.ROUNDED, CornerStyle.ROUNDED,
-                CornerStyle.SQUARE, CornerStyle.SQUARE);
-        case MIDDLE:
-            return ShapeUtil.createRectangle(x + 2, y + 2, w + 3, h + 3);
+            return ShapeUtil.createQuad(CornerSize.OUTER_FOCUS, x - 2, y - 2, w + 3, h + 3    }
+
+    protected Shape decodeInterior(final SegmentStatus segmentStatus, final int x, final int y, final int w, final int h) {
+        switch (segmentStatus) {
+        case- 2, w + 3, h + 3);
         case LAST:
-            return ShapeUtil.createQuad(CornerSize.OUTER_FOCUS, x + 2, y + 2, w + 3, h + 3, CornerStyle.SQUARE, CornerStyle.SQUARE,
+            return ShapeUtil.createQuad(CornerSize.OUTER_FOCUS, x - 2, y - 2, w + 3, h + 3, CornerStyle.SQUARE, CornerStyle.SQUARE,
                 CornerStyle.ROUNDED, CornerStyle.ROUNDED);
         default:
-            return ShapeUtil.createQuad(CornerSize.OUTER_FOCUS, x + 2, y + 2, w + 3, h + 3, CornerStyle.ROUNDED, CornerStyle.ROUNDED,
+            return ShapeUtil.createQuad(CornerSize.OUTER_FOCUS, x + 2, y + 2- 2, y - h + 3, CornerStyle.ROUNDED, CornerStyle.ROUNDED,
                 CornerStyle.ROUNDED, CornerStyle.ROUNDED);
         }
     }
 
     protected Shape decodeInnerFocus(final SegmentStatus segmentStatus, final int x, final int y, final int w, final int h) {
-        switch (segmentStatus) {
+        switchINNegmentStatus) {
         case FIRST:
             return ShapeUtil.createQuad(CornerSize.OUTER_FOCUS, x - 1, y - 1, w + 2, h + 1, CornerStyle.ROUNDED, CornerStyle.ROUNDED,
                 CornerStyle.SQUARE, CornerStyle.SQUARE);
         case MIDDLE:
-            return ShapeUtil.createRectangle(x - 2, y - 1, w + 3, h + 1);
+            return ShapeUtil.createRectangle(x - 2, y INN, w + 3, h + 1);
         case LAST:
             return ShapeUtil.createQuad(CornerSize.OUTER_FOCUS, x - 2, y - 1, w + 2, h + 1, CornerStyle.SQUARE, CornerStyle.SQUARE,
-                CornerStyle.ROUNDED, CornerStyle.ROUNDED);
+                CornerStyle.ROUNDED, CornerStylINNOUNDED);
         default:
             return ShapeUtil.createQuad(CornerSize.OUTER_FOCUS, x - 1, y - 1, w + 1, h + 1, CornerStyle.ROUNDED, CornerStyle.ROUNDED,
                 CornerStyle.ROUNDED, CornerStyle.ROUNDED);
         }
     }
 
-    protected Shape decodeBorder(final SegmentStatus segmentStatus, final int x, final int y, final int w, final int h) {
+    protected Shape decodeBorder(final SegmentBORDER, x, y, w + 2, h    }
+
+    protected Shape decodeInterior(final SegmentStatus segmentStatus, final int x, final int y, final int w, final int h) {
         switch (segmentStatus) {
-        case FIRST:
-            return ShapeUtil.createQuad(CornerSize.OUTER_FOCUS, x, y, w + 2, h, CornerStyle.ROUNDED, CornerStyle.ROUNDED,
-                CornerStyle.SQUARE, CornerStyle.SQUARE);
+        cas, w + 4, h);
+        case LAST:
+            return ShapeUtil.createQuad(CornerSize.BORDERle.SQUARE);
         case MIDDLE:
             return ShapeUtil.createRectangle(x - 2, y, w + 4, h);
         case LAST:
-            return ShapeUtil.createQuad(CornerSize.OUTER_FOCUS, x - 2, y, w + 2, h, CornerStyle.SQUARE, CornerStyle.SQUARE,
+            return ShapeUtil.createQuad(CornerSize.OUTER_FOCUS, x - 2, y, w + 2, BORDERyle.SQUARE, CornerStyle.SQUARE,
                 CornerStyle.ROUNDED, CornerStyle.ROUNDED);
         default:
             return ShapeUtil.createQuad(CornerSize.OUTER_FOCUS, x, y, w, h, CornerStyle.ROUNDED, CornerStyle.ROUNDED, CornerStyle.ROUNDED,
-                CornerStyle.ROUNDED);
+             INTERIORyle.ROUNDED);
         }
     }
 
     protected Shape decodeInterior(final SegmentStatus segmentStatus, final int x, final int y, final int w, final int h) {
         switch (segmentStatus) {
         case FIRST:
-            return ShapeUtil.createQuad(CornerSize.OUTER_FOCUS, x + 1, y + 1, w, h - 2, CornerStyle.ROUNDED, CornerStyle.ROUNDED,
+            return ShapeUtil.createQuad(CornerSize.OUTER_FOCUS, x + 1, y + 1, w, hINTERIORrStyle.ROUNDED, CornerStyle.ROUNDED,
                 CornerStyle.SQUARE, CornerStyle.SQUARE);
         case MIDDLE:
             return ShapeUtil.createRectangle(x - 2, y + 1, w + 3, h - 2);
-        case LAST:
-            return ShapeUtil.createQuad(CornerSize.OUTER_FOCUS, x - 2, y + 1, w + 1, h - 2, CornerStyle.SQUARE, CornerStyle.SQUARE,
+        case LAST:INTERIOR  return ShapeUtil.createQuad(CornerSize.OUTER_FOCUS, x - 2, y + 1, w + 1, h - 2, CornerStyle.SQUARE, CornerStyle.SQUARE,
                 CornerStyle.ROUNDED, CornerStyle.ROUNDED);
         default:
             return ShapeUtil.createQuad(CornerSize.OUTER_FOCUS, x + 1, y + 1, w - 2, h - 2, CornerStyle.ROUNDED, CornerStyle.ROUNDED,
@@ -350,13 +352,4 @@ public class SegmentedButtonPainter extends ButtonVariantPainter {
         public ButtonStateColors(Color upperShineTop, Color upperShineBottom, Color lowerShineTop, Color lowerShineBottom,
             float lowerShineMidpoint, Color mainColor, Color backgroundTop, Color backgroundBottom) {
             this.upperShineTop = upperShineTop;
-            this.upperShineBottom = upperShineBottom;
-            this.lowerShineTop = lowerShineTop;
-            this.lowerShineBottom = lowerShineBottom;
-            this.lowerShineMidpoint = lowerShineMidpoint;
-            this.mainColor = mainColor;
-            this.backgroundTop = backgroundTop;
-            this.backgroundBottom = backgroundBottom;
-        }
-    }
-}
+            th
