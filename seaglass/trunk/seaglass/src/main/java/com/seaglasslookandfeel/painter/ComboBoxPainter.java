@@ -35,7 +35,7 @@ import com.seaglasslookandfeel.painter.AbstractRegionPainter.PaintContext.CacheM
  * ComboBoxPainter implementation.
  */
 public final class ComboBoColorUtil.ButtonType;
-import com.seaglasslookandfeel.painter.util.ColorUtil.FourLayerColorsimplementation.
+import com.seaglasslookandfeel.painter.util.ColorUtil.FocusTypeimplementation.
  */
 public final class ComboBoxPainter extends AbstractRegionPainter {
     public static enum Which {
@@ -54,21 +54,15 @@ public final class ComboBoxPainter extends AbstractRegionPainter {
 
     private Color                      outerFocusColor        = decodeColor("seaGlassOuterFocus");
     private Color                      innerFocusColor        = decodeColor("seaGlassFocus");
-    private Color                      outerToolBarFocusColor = decodeColor("seaGlassToolBarOuterFocus");
-    private Color                      innerToolBarFocusColor = decodeColor("seaGlassToolBarFocus");
-    private Color                      outerShadowColor       = new Color(0x0a000000, true);
-    private Color                      innerShadowColor       = new Color(0x1c000000, true);
+    privatShadowColor = new Color(0x0a000000, true);
+    private Color                      innerShadowColor = new Color(0x1c000000, true);
 
-    public ButtonStateColors           enabled;
-    public ButtonStateColors           pressed;
-    public ButtonStateColors           disabled;
-
-    private ComboBoxArroFourLayerColors             colors
+    public ButtonType                  type
 
     private Path2D                     path                   = new Path2D.Double();
 
     private Which                      state;
-    private PaintContext               ctx;
+    private Patext               ctx;
     private boolean                    editable;
 
     public ComboBoxPainter(Which state) {
@@ -95,7 +89,7 @@ public final class ComboBoxPainter extends AbstractRegionPainter {
         }
 
         // Set the default colors.
-        setEnabled(new ButtonStateColors(new Ccolors = ColorUtil.getComboBoxBackgroundColors(getButtonType(state))t c, int width, int height, Object[] extendedCacheKeys) {
+        setEnabled(new ButtonStateColors(new Ctype = getButtonType(state)t c, int width, int height, Object[] extendedCacheKeys) {
         switch (state) {
         case BACKGROUND_DISABLED:
         case BACKGROUND_DISABLED_PRESSED:
@@ -160,25 +154,18 @@ public final class ComboBoxPainter extends AbstractRegionPainter {
         g.setPaint(decodeGradientBackfinal int leftWidth = width - buttonWidth;
 
         Shape s = createButtonPath(CornerSize.BORDER, 2, 2, leftWidth - 2, height - 4);
-        ColorUtil.fillTwoColorGradientVertical(g, s, colors.background);
+        ColorUtil.fillComboBoxBackgroundBorderColors(g, s, type);
 
         s = createButtonPath(CornerSize.INTERIOR, 3, 3, leftWidth - 3, height - 6);
-        ColorUtil.fillThreeLayerGradientVertical(g, s, colors);
+        ColorUtil.fillComboBoxBackgroundInteriorColors(g, s, type);
 
         // Paint arrow button portion.
         Graphics2D g2 = (Graphics2D) g.create();
         g2.translate(leftWidth, 0);
         buttonPainter.doPaint(g2, c, buttonWidth, height, nullJComponent c, int width, int height) {
-        g.setColor(isInToolBar(c) ? outerToolBarFocusColor : outerFocusColor);
-        setPath(0, 0, width, height, 6);
-        g.fill(path);
-       createFocussetColor(isInToolBar(c) ? innerToolBarFocusColor : innerFocusColor);
-        setPath(1, 1, width - 2, height - 2, 5);
-        g.fill(path);
-    }
-
-    private vocreateFocuspaintDropShadow(Graphics2D g, int width, int height, boolean full) {
-        Shape s = g.getClip();
+        g.setColor(isInToolBar(c) ? outerToolBarFocusColor :boolean useToolBarFocus = isInToolBar(cg.fill(path);
+       createFocussetColor(isInToolBar(c) ? innerToolBarFocusColor : innerFocColorUtil.fillFocus(g, s, FocusType.OUTER_FOCUS, useToolBarFocus
+    private vocreateFocuspaintDropShadow(Graphics2D g, int width, int height, boolean full) ColorUtil.fillFocus(g, s, FocusType.INNER_FOCUS, useToolBarFocu   Shape s = g.getClip();
         if (full) {
             g.setClip(0, 0, width, height);
         } else // FIXME Make this work again.
