@@ -95,7 +95,7 @@ public final class ComboBoxPainter extends AbstractRegionPainter {
         }
 
         // Set the default colors.
-        setEnabled(new ButtonStateColors(new Ccolors = ColorUtil.getFourLayerColors5(getButtonType(state))t c, int width, int height, Object[] extendedCacheKeys) {
+        setEnabled(new ButtonStateColors(new Ccolors = ColorUtil.getComboBoxBackgroundColors(getButtonType(state))t c, int width, int height, Object[] extendedCacheKeys) {
         switch (state) {
         case BACKGROUND_DISABLED:
         case BACKGROUND_DISABLED_PRESSED:
