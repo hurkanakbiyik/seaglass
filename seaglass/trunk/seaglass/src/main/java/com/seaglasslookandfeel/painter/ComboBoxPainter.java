@@ -19,7 +19,6 @@
  */
 package com.seaglasslookandfeel.painter;
 
-import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.Shapeort java.awt.geom.Rectangle2D;
@@ -53,11 +52,7 @@ public final class ComboBoxPainter extends AbstractRegionPainter {
     }
 
     private Color                      outerFocusColor        = decodeColor("seaGlassOuterFocus");
-    private Color                      innerFocusColor        = decodeColor("seaGlassFocus");
-    privatShadowColor = new Color(0x0a000000, true);
-    private Color                      innerShadowColor = new Color(0x1c000000, true);
-
-    public ButtonType                  type
+    private Color                      innerFocusColor        = dublic ButtonType                  type
 
     private Path2D                     path                   = new Path2D.Double();
 
@@ -164,8 +159,11 @@ public final class ComboBoxPainter extends AbstractRegionPainter {
         g2.translate(leftWidth, 0);
         buttonPainter.doPaint(g2, c, buttonWidth, height, nullJComponent c, int width, int height) {
         g.setColor(isInToolBar(c) ? outerToolBarFocusColor :boolean useToolBarFocus = isInToolBar(cg.fill(path);
-       createFocussetColor(isInToolBar(c) ? innerToolBarFocusColor : innerFocColorUtil.fillFocus(g, s, FocusType.OUTER_FOCUS, useToolBarFocus
-    private vocreateFocuspaintDropShadow(Graphics2D g, int width, int height, boolean full) ColorUtil.fillFocus(g, s, FocusType.INNER_FOCUS, useToolBarFocu   Shape s = g.getClip();
+       createFocussetColor(isInToolBar(c) ? innerToolBarFocusColor : innerFocg.setPaint(ColorUtil.getFocusPaint(g, s, FocusType.OUTER_FOCUS, useToolBarFocus));
+        g.fill(s);
+        s = createFocusPath(CornerSize.INNER_FOCUS, 1, 1, width - 2, height - 2);
+        g.setPaint(ColorUtil.getFocusPaint(g, s, FocusType.INNER_FOCUS, useToolBarFocus));
+        g.fill(   Shape s = g.getClip();
         if (full) {
             g.setClip(0, 0, width, height);
         } else // FIXME Make this work again.
