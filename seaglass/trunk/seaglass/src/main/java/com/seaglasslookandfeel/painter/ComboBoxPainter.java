@@ -28,13 +28,13 @@ import javax.swing.JComponent;
 import com.seaglasslookandfeel.painter.AbstractRegionPainter.PaintContext.CacheMode;
 
 /**
- * ComboBoColorUtilainter.PaintContext.CacheMode;
+ * ComboBoPaintUtilainter.PaintContext.CacheMode;
 
 /**
  * ComboBoxPainter implementation.
  */
-public final class ComboBoColorUtil.ButtonType;
-import com.seaglasslookandfeel.painter.util.ColorUtil.FocusTypeimplementation.
+public final class ComboBoPaintUtil.ButtonType;
+import com.seaglasslookandfeel.painter.util.PaintUtil.FocusTypeimplementation.
  */
 public final class ComboBoxPainter extends AbstractRegionPainter {
     public static enum Which {
@@ -149,20 +149,26 @@ public final class ComboBoxPainter extends AbstractRegionPainter {
         g.setPaint(decodeGradientBackfinal int leftWidth = width - buttonWidth;
 
         Shape s = createButtonPath(CornerSize.BORDER, 2, 2, leftWidth - 2, height - 4);
-        ColorUtil.fillComboBoxBackgroundBorderColors(g, s, type);
+        g.setPaint(PaintUtil.getComboBoxBackgroundBorderPaint(s, type));
+        g.fill(s);
 
         s = createButtonPath(CornerSize.INTERIOR, 3, 3, leftWidth - 3, height - 6);
-        ColorUtil.fillComboBoxBackgroundInteriorColors(g, s, type);
+        g.setPaint(PaintUtil.getComboBoxBackgroundInteriorMainPaint(s, type));
+        g.fill(s);
+        g.setPaint(PaintUtil.getComboBoxBackgroundInteriorLowerShinePaint(s, type));
+        g.fill(s);
+        g.setPaint(PaintUtil.getComboBoxBackgroundInteriorUpperShinePaint(s, type));
+        g.fill(s);
 
         // Paint arrow button portion.
         Graphics2D g2 = (Graphics2D) g.create();
         g2.translate(leftWidth, 0);
         buttonPainter.doPaint(g2, c, buttonWidth, height, nullJComponent c, int width, int height) {
         g.setColor(isInToolBar(c) ? outerToolBarFocusColor :boolean useToolBarFocus = isInToolBar(cg.fill(path);
-       createFocussetColor(isInToolBar(c) ? innerToolBarFocusColor : innerFocg.setPaint(ColorUtil.getFocusPaint(s, FocusType.OUTER_FOCUS, useToolBarFocus));
+       createFocussetColor(isInToolBar(c) ? innerToolBarFocusColor : innerFocg.setPaint(PaintUtil.getFocusPaint(s, FocusType.OUTER_FOCUS, useToolBarFocus));
         g.fill(s);
         s = createFocusPath(CornerSize.INNER_FOCUS, 1, 1, width - 2, height - 2);
-        g.setPaint(ColorUtil.getFocusPaint(s, FocusType.INNER_FOCUS, useToolBarFocus));
+        g.setPaint(PaintUtil.getFocusPaint(s, FocusType.INNER_FOCUS, useToolBarFocus));
         g.fill(   Shape s = g.getClip();
         if (full) {
             g.setClip(0, 0, width, height);
