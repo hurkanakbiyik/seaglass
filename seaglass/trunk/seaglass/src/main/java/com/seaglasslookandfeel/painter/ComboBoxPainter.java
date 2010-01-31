@@ -159,10 +159,10 @@ public final class ComboBoxPainter extends AbstractRegionPainter {
         g2.translate(leftWidth, 0);
         buttonPainter.doPaint(g2, c, buttonWidth, height, nullJComponent c, int width, int height) {
         g.setColor(isInToolBar(c) ? outerToolBarFocusColor :boolean useToolBarFocus = isInToolBar(cg.fill(path);
-       createFocussetColor(isInToolBar(c) ? innerToolBarFocusColor : innerFocg.setPaint(ColorUtil.getFocusPaint(g, s, FocusType.OUTER_FOCUS, useToolBarFocus));
+       createFocussetColor(isInToolBar(c) ? innerToolBarFocusColor : innerFocg.setPaint(ColorUtil.getFocusPaint(s, FocusType.OUTER_FOCUS, useToolBarFocus));
         g.fill(s);
         s = createFocusPath(CornerSize.INNER_FOCUS, 1, 1, width - 2, height - 2);
-        g.setPaint(ColorUtil.getFocusPaint(g, s, FocusType.INNER_FOCUS, useToolBarFocus));
+        g.setPaint(ColorUtil.getFocusPaint(s, FocusType.INNER_FOCUS, useToolBarFocus));
         g.fill(   Shape s = g.getClip();
         if (full) {
             g.setClip(0, 0, width, height);
