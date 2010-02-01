@@ -57,7 +57,7 @@ public final class ComboBoxPainter extends AbstractRegionPainter {
     private Path2D                     path                   = new Path2D.Double();
 
     private Which                      state;
-    private Patext               ctx;
+    privatext               ctx;
     private boolean                    editable;
 
     public ComboBoxPainter(Which state) {
@@ -154,11 +154,7 @@ public final class ComboBoxPainter extends AbstractRegionPainter {
         g.fill(s);
 
         s = createButtonPath(CornerSize.INTERIOR, 3, 3, leftWidth - 3, height - 6);
-        g.setPaint(PaintUtil.getComboBoxBackgroundInteriorMainPaint(s, type));
-        g.fill(s);
-        g.setPaint(PaintUtil.getComboBoxBackgroundInteriorLowerShinePaint(s, type));
-        g.fill(s);
-        g.setPaint(PaintUtil.getComboBoxBackgroundInteriorUpperShinePaint(s, type));
+        g.setPaint(PaintUtil.getComboBoxBackgroundInteriorPaint(s, type));
         g.fill(s);
 
         // Paint arrow button portion.
