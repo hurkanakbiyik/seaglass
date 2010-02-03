@@ -31,8 +31,7 @@ import com.seaglasslookandfeel.painter.AbstractRegionPainter.PaintContext.CacheM
 /**
  * ComboBoxPainter implementation.
  */
-public final class ComboBoPaintUtil.ButtonType;
-import com.seaglasslookandfeel.painter.util.xPainter extends AbstractRegionPainter {
+public final class ComboBoxPainter extends AbstractRegionPainter {
     public static enum Which {
         BACKGROUND_DISABLED,
         BACKGROUND_DISABLED_PRESSED,
@@ -48,7 +47,7 @@ import com.seaglasslookandfeel.painter.util.xPainter extends AbstractRegionPaint
     }
 
     private Color                      outerFocusColor        = decodeColor("seaGlassOuterFocus");
-    private Color                      innerFocusColor        = dublic ButtonType                  type
+    private Color                      innerFocusColor        = dublic CommonControlType                  type
 
     private Path2D                     path                   = new Path2D.Double();
 
@@ -122,20 +121,20 @@ import com.seaglasslookandfeel.painter.util.xPainter extends AbstractRegionPaint
     }
 
     private void paintDisabled(Graphics2D g, JComponent c, int width, int height) {
- ButtonType getButtonType(Which statese BACKGROUND_DISABLED_PRESSED:
+ CommonControlType getButtonType(Which statese BACKGROUND_DISABLED_PRESSED:
             paintDropShadow(g, width, height, true);
             paintDisabled(g,case BACKGROUND_DISABLED_EDITABLE:
-            return ButtonType.DISABLED;
+            return CommonControlType.DISABLED;
         case BACKGROUND_ENABLED:
         case BACKGROUND_FOCUSED:
         case BACKGROUND_FOCUSED_EDITABLE:
         case BACKGROUND_ENABLED_EDITABLE:
-            return ButtonType.ENABLED;
+            return CommonControlType.ENABLED;
         case BACKGROUND_PRESSED_FOCUSED:
         case BACKGROUND_PRESSED:
         case BACKGROUND_ENABLED_SELECTED:
         case BACKGROUND_PRESSED_EDITABLE:
-            return ButtonType.PRESSED;
+            return CommonControlType.PRESSED;
         }
         return null;
     }
@@ -194,34 +193,34 @@ import com.seaglasslookandfeel.painter.util.xPainter extends AbstractRegionPaint
         path.lineTo(left, bottom - arcH)RoundRectangle x, y, width, height, sizettom, left + arcW, bottom);
         path.lineTo(right, bottom);
         p
-    public Paint getComboBoxBackgroundBorderPaint(Shape s, ButtonType type) {
+    public Paint getComboBoxBackgroundBorderPaint(Shape s, CommonControlType type) {
         TwoColors colors = getCommonBorderColors(type);
         return createVerticalGradient(s, colors);
     }
 
-    public Paint getComboBoxBackgroundInteriorPaint(Shape s, ButtonType type) {
+    public Paint getComboBoxBackgroundInteriorPaint(Shape s, CommonControlType type) {
         FourColors colors = getCommonInteriorColors(type);
         return createVerticalGradient(s, colors);
     }
 
-    public TwoColors getCommonBorderColors(ButtonType type) {
+    public TwoColors getCommonBorderColors(CommonControlType type) {
         switch (type) {
         case DISABLED:
-            return super.getCommonBorderColors(ButtonType.DISABLED);
+            return super.getCommonBorderColors(CommonControlType.DISABLED);
         case ENABLED:
         case PRESSED:
-            return super.getCommonBorderColors(ButtonType.ENABLED);
+            return super.getCommonBorderColors(CommonControlType.ENABLED);
         }
         return null;
     }
 
-    public FourColors getCommonInteriorColors(ButtonType type) {
+    public FourColors getCommonInteriorColors(CommonControlType type) {
         switch (type) {
         case DISABLED:
-            return super.getCommonInteriorColors(ButtonType.DISABLED);
+            return super.getCommonInteriorColors(CommonControlType.DISABLED);
         case ENABLED:
         case PRESSED:
-            return super.getCommonInteriorColors(ButtonType.ENABLED);
+            return super.getCommonInteriorColors(CommonControlType.ENABLED);
         }
         return null;
     }
