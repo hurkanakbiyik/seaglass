@@ -29,15 +29,10 @@ import javax.swing.JComponent;
 import com.seaglasslookandfeel.painter.AbstractRegionPainter.PaintContext.CacheMode;
 
 /**
- * ComboBoPaintUtilainter.PaintContext.CacheMode;
-
-/**
  * ComboBoxPainter implementation.
  */
 public final class ComboBoPaintUtil.ButtonType;
-import com.seaglasslookandfeel.painter.util.PaintUtil.FocusTypeimplementation.
- */
-public final class ComboBoxPainter extends AbstractRegionPainter {
+import com.seaglasslookandfeel.painter.util.xPainter extends AbstractRegionPainter {
     public static enum Which {
         BACKGROUND_DISABLED,
         BACKGROUND_DISABLED_PRESSED,
@@ -163,10 +158,10 @@ public final class ComboBoxPainter extends AbstractRegionPainter {
         g2.translate(leftWidth, 0);
         buttonPainter.doPaint(g2, c, buttonWidth, height, nullJComponent c, int width, int height) {
         g.setColor(isInToolBar(c) ? outerToolBarFocusColor :boolean useToolBarFocus = isInToolBar(cg.fill(path);
-       createFocussetColor(isInToolBar(c) ? innerToolBarFocusColor : innerFocg.setPaint(PaintUtil.getFocusPaint(s, FocusType.OUTER_FOCUS, useToolBarFocus));
+       createFocussetColor(isInToolBar(c) ? innerToolBarFocusColor : innerFocg.setPaint(getFocusPaint(s, FocusType.OUTER_FOCUS, useToolBarFocus));
         g.fill(s);
         s = createFocusPath(CornerSize.INNER_FOCUS, 1, 1, width - 2, height - 2);
-        g.setPaint(PaintUtil.getFocusPaint(s, FocusType.INNER_FOCUS, useToolBarFocus));
+        g.setPaint(getFocusPaint(s, FocusType.INNER_FOCUS, useToolBarFocus));
         g.fill(   Shape s = g.getClip();
         if (full) {
             g.setClip(0, 0, width, height);
