@@ -47,7 +47,7 @@ public final class ComboBoxPainter extends AbstractRegionPainter {
     }
 
     private Color                      outerFocusColor        = decodeColor("seaGlassOuterFocus");
-    private Color                      innerFocusColor        = dublic CommonControlType                  type
+    private Color                      innerFocusColor        = dublic CommonControlType           type
 
     private Path2D                     path                   = new Path2D.Double();
 
