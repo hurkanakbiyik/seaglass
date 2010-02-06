@@ -29,11 +29,8 @@ import javax.swing.JComponent;
 import com.seaglasslookandfeel.painter.AbstractRegionPainter.PaintContext.CacheMode;
 
 /**
- * ComboBoxPainter implementation.
- */
-public final class ComboBoxPainter extends AbstractRegionPainter {
-    public static enum Which {
-        BACKGROUND_DISABLED,
+ * ComboBoxPainGenerator.CornerSize;
+import com.seaglasslookandfeel.painter.util.ShapeGenerator     BACKGROUND_DISABLED,
         BACKGROUND_DISABLED_PRESSED,
         BACKGROUND_ENABLED,
         BACKGROUNDCommonColorsED,
@@ -181,17 +178,16 @@ public final class ComboBoxPainter extends AbstractRegionPainter {
         width -= 2.0;
  creat 6.0;
         decodeButtonPath(x, y, width, height, arcSize, arcSize);
-        return path;
-    }
-
-    pRoundRectangletleft, top, width, height, size left, Double top, Double width, Double height, Double arcW, Double arcH) {
+        return pashapeGenerator.createRoundRectangle(left, top, width, height, size, CornerStyle.ROUNDED, CornerStyle.ROUNDED,
+            CornerStyle.SQUARE,
         Double bottom = top + height;
         createFocusble right = left + width;
         path.reset();
         path.moveTo(left + arcW, top);
         path.quadTo(left, top, left, top + arcH);
-        path.lineTo(left, bottom - arcH)RoundRectangle x, y, width, height, sizettom, left + arcW, bottom);
-        path.lineTo(right, bottom);
+        path.lineTo(leftshapeGenerator- arcH)RoundRectangle x, y, width, height, sizettom, left + arcW, bottom);
+        path.lin
+           eTo(right, bottom);
         p
     public Paint getComboBoxBackgroundBorderPaint(Shape s, CommonControlType type) {
         TwoColors colors = getCommonBorderColors(type);
