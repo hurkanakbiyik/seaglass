@@ -44,7 +44,7 @@ import com.seaglasslookandfeel.painter.util.ShapeGenerator     BACKGROUND_DISABL
     }
 
     private Color                      outerFocusColor        = decodeColor("seaGlassOuterFocus");
-    private Color                      innerFocusColor        = dublic CommonControlType           type
+    private Color                      innerFocusColor        = dublic CommonControlState           type
 
     private Path2D                     path                   = new Path2D.Double();
 
@@ -118,20 +118,20 @@ import com.seaglasslookandfeel.painter.util.ShapeGenerator     BACKGROUND_DISABL
     }
 
     private void paintDisabled(Graphics2D g, JComponent c, int width, int height) {
- CommonControlType getButtonType(Which statese BACKGROUND_DISABLED_PRESSED:
+ CommonControlState getButtonType(Which statese BACKGROUND_DISABLED_PRESSED:
             paintDropShadow(g, width, height, true);
             paintDisabled(g,case BACKGROUND_DISABLED_EDITABLE:
-            return CommonControlType.DISABLED;
+            return CommonControlState.DISABLED;
         case BACKGROUND_ENABLED:
         case BACKGROUND_FOCUSED:
         case BACKGROUND_FOCUSED_EDITABLE:
         case BACKGROUND_ENABLED_EDITABLE:
-            return CommonControlType.ENABLED;
+            return CommonControlState.ENABLED;
         case BACKGROUND_PRESSED_FOCUSED:
         case BACKGROUND_PRESSED:
         case BACKGROUND_ENABLED_SELECTED:
         case BACKGROUND_PRESSED_EDITABLE:
-            return CommonControlType.PRESSED;
+            return CommonControlState.PRESSED;
         }
         return null;
     }
@@ -189,34 +189,34 @@ import com.seaglasslookandfeel.painter.util.ShapeGenerator     BACKGROUND_DISABL
         path.lin
            eTo(right, bottom);
         p
-    public Paint getComboBoxBackgroundBorderPaint(Shape s, CommonControlType type) {
+    public Paint getComboBoxBackgroundBorderPaint(Shape s, CommonControlState type) {
         TwoColors colors = getCommonBorderColors(type);
         return createVerticalGradient(s, colors);
     }
 
-    public Paint getComboBoxBackgroundInteriorPaint(Shape s, CommonControlType type) {
+    public Paint getComboBoxBackgroundInteriorPaint(Shape s, CommonControlState type) {
         FourColors colors = getCommonInteriorColors(type);
         return createVerticalGradient(s, colors);
     }
 
-    public TwoColors getCommonBorderColors(CommonControlType type) {
+    public TwoColors getCommonBorderColors(CommonControlState type) {
         switch (type) {
         case DISABLED:
-            return super.getCommonBorderColors(CommonControlType.DISABLED);
+            return super.getCommonBorderColors(CommonControlState.DISABLED);
         case ENABLED:
         case PRESSED:
-            return super.getCommonBorderColors(CommonControlType.ENABLED);
+            return super.getCommonBorderColors(CommonControlState.ENABLED);
         }
         return null;
     }
 
-    public FourColors getCommonInteriorColors(CommonControlType type) {
+    public FourColors getCommonInteriorColors(CommonControlState type) {
         switch (type) {
         case DISABLED:
-            return super.getCommonInteriorColors(CommonControlType.DISABLED);
+            return super.getCommonInteriorColors(CommonControlState.DISABLED);
         case ENABLED:
         case PRESSED:
-            return super.getCommonInteriorColors(CommonControlType.ENABLED);
+            return super.getCommonInteriorColors(CommonControlState.ENABLED);
         }
         return null;
     }
