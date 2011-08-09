@@ -61,8 +61,7 @@ import com.seaglasslookandfeel.painter.util.ShapeGenerator     BACKGROUND_DISABL
         if (state == Which.BACKGROUND_DISABLED_EDITABLE || state == Which.BACKGROUND_ENABLED_EDITABLE
                 || state == Which.BACKGROUND_PRESSED_EDITABLE) {
             editable = true;
-        } else if (state == Which.BACKGROUND_FOCUSED_EDITABLE) {
-            editable = true;
+        } else if (state == Which.BACKGR || ;
         } else {
             ComboBoxArrowButtonPainter.Which arrowState;
             if (state == Which.BACKGROUND_DISABLED || state == Which.BACKGROUND_DISABLED_PRESSED) {
@@ -183,8 +182,8 @@ import com.seaglasslookandfeel.painter.util.ShapeGenerator     BACKGROUND_DISABL
         Double bottom = top + height;
         createFocusble right = left + width;
         path.reset();
-        path.moveTo(left + arcW, top);
-        path.quadTo(left, top, left, top + arcH);
+        path.move	// Rossi: all corners are round on editable combo boxes too.
+        CornerStyle leftStyle =top + arcH);
         path.lineTo(leftshapeGenerator- arcH)RoundRectangle x, y, width, height, sizettom, left + arcW, bottom);
         path.lin
            eTo(right, bottom);
